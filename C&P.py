@@ -38,6 +38,31 @@ class Reptile(Animal):
     def make_sound(self):
         print(f"{self.name} не издает звук")
 
-bird1 = Bird("Грего", 5, "красный")
-bird1.eat()
-bird1.make_sound()
+def make_animal_sound(animals):
+    for animal in animals:
+        animal.make_sound()
+
+class Person:
+    def __init__(self, name, nationality):
+        self.name = name
+        self.nationality = nationality
+
+    def care(self):
+        print(f"{self.name} заботиться о животных")
+
+class ZooKeeper(Person):
+    def __init__(self, name, nationality):
+        super().__init__(name, nationality)
+
+    def feed_animal(self):
+        print(f"{self.name} покормил животное")
+
+
+
+a = Bird("Грего", 5, "красный")
+b = Mammal("Петр", 56, 70)
+c = Reptile("Севик", 6, "Европа")
+
+
+animals = [a, b, c]
+make_animal_sound(animals)
